@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/first_fragment">
+    <fragment
+        android:id="@+id/first_fragment"
+        android:name="com.github.sookhee.navigationcomponenttest.FirstFragment"
+        tools:layout="@layout/fragment_first">
+        <action
+            android:id="@+id/action_first_fragment_to_second_fragment"
+            app:destination="@+id/second_fragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/second_fragment"
+        android:name="com.github.sookhee.navigationcomponenttest.SecondFragment"
+        android:label="second_fragment"
+        tools:layout="@layout/fragment_second">
+        <action
+            android:id="@+id/action_second_fragment_to_third_fragment"
+            app:destination="@+id/third_fragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <argument
+            android:name="testArg"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/third_fragment"
+        android:name="com.github.sookhee.navigationcomponenttest.ThridFragment"
+        android:label="third_fragment"
+        tools:layout="@layout/fragment_third">
+        <argument
+            android:name="testArg"
+            app:argType="string" />
+    </fragment>
+</navigation>
